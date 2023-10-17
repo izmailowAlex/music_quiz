@@ -1,119 +1,118 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
-  font-family: "Work Sans", sans-serif;
-  color: #e2dddd;
-  background-color: #333;
+ height: 100%;
+ font-family: 'Work Sans', sans-serif;
+ color: #e2dddd;
+ background-color: #333;
 }
 
 .app {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+ min-height: 100%;
+ display: flex;
+ flex-direction: column;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+ margin: 0 auto;
+ max-width: 90%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
 .header {
-  position: fixed;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.4);
-  opacity: 0.5;
-  z-index: 20;
+ position: fixed;
+ width: 100%;
+ background: rgba(255, 255, 255, 0.4);
+ opacity: 0.5;
+ z-index: 20;
 }
 
 .header-logo {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  background-image: url(../assets/img/logo_music.png);
+ width: 64px;
+ height: 64px;
+ display: flex;
+ background-image: url(../assets/img/logo_music.png);
 }
 
 .header-nav__title {
-  display: flex;
+ display: flex;
 }
 
 .header-nav__link {
-  text-decoration: none;
-  color: #fff;
+ text-decoration: none;
+ color: #fff;
 }
 
 .main {
-  flex: 1 1 auto;
+ flex: 1 1 auto;
 }
 
 .video {
-  width: 100%;
-  /* height: 100%; */
+ width: 100%;
 }
 
 .footer {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.2);
+ width: 100%;
+ position: fixed;
+ bottom: 0;
+ padding: 20px;
+ background: rgba(255, 255, 255, 0.2);
 }
 
 .contributors {
-  display: flex;
-  align-items: center;
-  margin: 0;
+ display: flex;
+ align-items: center;
+ margin: 0;
 }
 
 .contributors__link {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--grey-color);
-  transition: color 0.3s ease-in-out;
+ display: inline-flex;
+ flex-direction: row;
+ align-items: center;
+ gap: 10px;
+ text-decoration: none;
+ color: var(--grey-color);
+ transition: color 0.3s ease-in-out;
 }
 
 .contributors__icon {
-  display: inline-block;
+ display: inline-block;
 }
 
 .contributors__link-label {
-  font-size: 18px;
-  font-weight: 400;
+ font-size: 18px;
+ font-weight: 400;
 }
 
 .footer-year {
-  color: var(--grey-dark-color);
-  font-size: 16px;
+ color: var(--grey-dark-color);
+ font-size: 16px;
 }
 
 .footer-year:before {
-  content: "© ";
+ content: '© ';
 }
 
 .github {
-  width: 30px;
-  height: 30px;
+ width: 30px;
+ height: 30px;
 }
 
 .item__title {
-  transition: all 0.3s ease-in-out;
+ transition: all 0.3s ease-in-out;
 }
 
 .contributors__link:hover {
-  color: var(--base-color);
+ color: var(--base-color);
 }
 
 .contributors__link:hover path {
-  fill: var(--base-color);
+ fill: var(--base-color);
 }
