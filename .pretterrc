@@ -1,6 +1,6 @@
 {
   "printWidth": 80,
-  "tabWidth": 2,
+  "tabWidth": 1,
   "useTabs": false,
   "semi": true,
   "singleQuote": true,
@@ -12,4 +12,3 @@
   "htmlWhitespaceSensitivity": "strict",
   "endOfLine": "lf"
 }
-
