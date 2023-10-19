@@ -11,6 +11,9 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './dist'),
   },
+  resolve: {
+    extensions: ['.js', '.ts'],
+  },
   plugins: [
     new HTMLWebpackPlugin({
       title: 'Music Quiz',
