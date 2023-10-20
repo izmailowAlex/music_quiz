@@ -1,5 +1,11 @@
 import './css/style.css';
-import { video } from './components/video';
+import { header } from './components/header/header';
+import { main } from './components/main/main';
+import { footer } from './components/footer/footer';
 
-const MAIN_HOME = document.querySelector('#home');
-MAIN_HOME?.append(video);
+const ROOT = document.querySelector('#root');
+if (ROOT && ROOT instanceof HTMLElement) {
+  ROOT.append(header);
+  ROOT.append(main);
+  ROOT.append(footer);
+}
