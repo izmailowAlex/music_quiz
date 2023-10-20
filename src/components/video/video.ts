@@ -1,5 +1,5 @@
-import video_view from './../../assets/video/video_view.mp4';
 import { render } from '../../UI/render';
+import video_view from './../../assets/video/video_view.mp4';
 
 export const source: string | Node = render({
   tag: 'source',

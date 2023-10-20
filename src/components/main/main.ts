@@ -1,5 +1,5 @@
-import { video } from '../video/video';
 import { render } from '../../UI/render';
+import { video } from '../video/video';
 
 const ROOT = document.querySelector('#root');
 
