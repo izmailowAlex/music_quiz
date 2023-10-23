@@ -22,7 +22,7 @@ export class Moovie {
         { attr: 'loop', sign: 'true' },
       ],
       className: 'video',
-      child: source,
+      child: [source],
     });
   }
 

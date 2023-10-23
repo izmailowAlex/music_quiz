@@ -39,7 +39,7 @@ export class Footer {
     this.footer = render({
       tag: 'footer',
       className: 'footer',
-      child: container,
+      child: [container],
     });
   }
 

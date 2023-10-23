@@ -5,8 +5,11 @@ interface IObject {
 
 export interface IRender {
   tag: string;
-  attributes?: IObject[];
   className?: string;
+  attributes?: IObject[];
+  id?: string;
+  src?: string;
+  alt?: string;
   innerHTML?: string;
-  child?: HTMLElement | null;
+  child?: HTMLElement[] | null;
 }

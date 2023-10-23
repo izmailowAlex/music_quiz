@@ -54,13 +54,13 @@ export class Header {
     const container = render({
       tag: 'div',
       className: 'container',
-      child: headerWrapper,
+      child: [headerWrapper],
     });
 
     this.header = render({
       tag: 'header',
       className: 'header',
-      child: container,
+      child: [container],
     });
   }
 
