@@ -1,11 +1,8 @@
-import './css/style.css';
-import { header } from './components/header/header';
-import { main } from './components/main/main';
-import { footer } from './components/footer/footer';
+import './style.css';
+import { App } from './app';
 
-const ROOT = document.querySelector('#root');
-if (ROOT && ROOT instanceof HTMLElement) {
-  ROOT.append(header);
-  ROOT.append(main);
-  ROOT.append(footer);
-}
+const app = new App();
+app.init();
+
+const score = document.querySelector('#score');
+console.log(score);

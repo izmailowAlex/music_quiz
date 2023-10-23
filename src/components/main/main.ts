@@ -1,19 +1,51 @@
 import { render } from '../../UI/render';
-import { video } from '../video/video';
+import { Moovie } from '../Moovie/Moovie';
 
-const ROOT = document.querySelector('#root');
+export class Main {
+  private main;
+  private moovie;
 
-export const main = render({
-  tag: 'main',
-  className: 'main',
-});
+  constructor() {
+    const ROOT = document.querySelector('#root');
+    this.moovie = new Moovie().init();
 
-if (ROOT && ROOT instanceof HTMLElement) {
-  if (ROOT.dataset.id === 'home') {
-    main.append(video);
-  } else if (ROOT.dataset.id === 'game') {
-    console.log('game');
-  } else {
-    console.log('result');
+    let page: string | undefined = '';
+    let mainContain = '';
+
+    if (ROOT && ROOT instanceof HTMLElement) {
+      if (page !== undefined) {
+        page = ROOT.dataset.id;
+      }
+    }
+
+    const mainWrapper = render({
+      tag: 'div',
+      className: 'main-wrapper',
+      innerHTML: mainContain,
+    });
+
+    const container = render({
+      tag: 'div',
+      className: 'container',
+      child: mainWrapper,
+    });
+
+    this.main = render({
+      tag: 'main',
+      className: 'main',
+      child: container,
+    });
+
+    if (page === 'home') {
+      this.main.append(this.moovie);
+    } else if (page === 'game') {
+      console.log('game');
+    } else {
+      console.log('result');
+    }
+  }
+
+  init() {
+    return this.main;
   }
 }

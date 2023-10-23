@@ -1,66 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-  font-family: 'Work Sans', sans-serif;
-  color: #e2dddd;
-  background-color: #333;
-}
-
-.app {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header {
-  position: fixed;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.4);
-  opacity: 0.5;
-  z-index: 20;
-}
-
-.header-logo {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  background-image: url(../assets/img/logo_music.png);
-}
-
-.header-nav__title {
-  display: flex;
-}
-
-.header-nav__link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.main {
-  flex: 1 1 auto;
-}
-
-.video {
-  width: 100%;
-}
-
 .footer {
   width: 100%;
   position: fixed;
+  left: 0;
   bottom: 0;
   padding: 20px;
   background: rgba(255, 255, 255, 0.2);

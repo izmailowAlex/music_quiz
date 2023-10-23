@@ -8,4 +8,5 @@ export interface IRender {
   attributes?: IObject[];
   className?: string;
   innerHTML?: string;
+  child?: HTMLElement | null;
 }

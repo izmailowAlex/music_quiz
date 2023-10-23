@@ -5,6 +5,7 @@ export const render = ({
   attributes,
   className = '',
   innerHTML = '',
+  child = null,
 }: IRender): HTMLElement => {
   const elem: HTMLElement = document.createElement(tag);
   if (attributes) {
@@ -15,6 +16,9 @@ export const render = ({
   elem.classList.add(className);
   if (innerHTML) {
     elem.innerHTML = innerHTML;
+  }
+  if (child) {
+    elem.append(child);
   }
   return elem;
 };

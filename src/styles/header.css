@@ -1,0 +1,77 @@
+.header-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app[data-id='home'] .header-wrapper {
+  padding: 5px 20px;
+}
+
+.app[data-id='game'] .header-wrapper {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.app[data-id='home'] .header {
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 0.5;
+  z-index: 20;
+}
+
+.header__up {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  background-image: url(../assets/img/logo_music.png);
+}
+
+.app[data-id='game'] .header-nav {
+  width: 100%;
+}
+
+.header-nav__title {
+  display: flex;
+}
+
+.header-nav__title:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.header-nav__link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-nav__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.header-list__item {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  color: #fff;
+  background-color: #2ea04d;
+  transition: all 0.5s;
+}
+
+.active {
+  background-color: #26863f;
+}
