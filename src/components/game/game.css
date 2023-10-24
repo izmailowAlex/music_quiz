@@ -38,14 +38,14 @@
   border-bottom: 1px solid #555;
 }
 
-.preview-progress {
+.player {
   height: 70%;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.preview__btn {
+.player__btn {
   width: 40px;
   height: 40px;
   border: 2px solid #2ea04d;
@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 
-.preview-player {
+.player-wrapper {
   width: 90%;
   margin-left: auto;
   border-radius: 5px;

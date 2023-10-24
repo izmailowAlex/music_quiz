@@ -1,10 +1,14 @@
 import { render } from '../../../UI/render';
 import png from './../../../assets/img/empty.png';
+import { Player } from '../../Player/Player';
 
 export class Preview {
   private preview;
+  private player;
 
   constructor() {
+    this.player = new Player().init();
+
     const previewImageImg = render({
       tag: 'img',
       className: 'preview-image__img',
@@ -24,64 +28,10 @@ export class Preview {
       innerHTML: '* * *',
     });
 
-    const previewButton = render({
-      tag: 'button',
-      className: 'preview__btn',
-      id: 'play',
-    });
-
-    const playerProgressBar = render({
-      tag: 'input',
-      className: 'player-progress-bar',
-      attributes: [
-        { attr: 'type', sign: 'range' },
-        { attr: 'min', sign: '0' },
-        { attr: 'max', sign: '100' },
-        { attr: 'name', sign: 'input' },
-        { attr: 'value', sign: '0' },
-      ],
-    });
-
-    const playerProgress = render({
-      tag: 'div',
-      className: 'player-progress',
-      child: [playerProgressBar],
-    });
-
-    const playerTimeCurrent = render({
-      tag: 'div',
-      className: 'player-time-current',
-      innerHTML: '00:00',
-    });
-
-    const playerTimeFull = render({
-      tag: 'div',
-      className: 'player-time-full',
-      innerHTML: '00:00',
-    });
-
-    const playerTime = render({
-      tag: 'div',
-      className: 'player-time',
-      child: [playerTimeCurrent, playerTimeFull],
-    });
-
-    const previewPlayer = render({
-      tag: 'div',
-      className: 'preview-player',
-      child: [playerProgress, playerTime],
-    });
-
-    const previewProgress = render({
-      tag: 'div',
-      className: 'preview-progress',
-      child: [previewButton, previewPlayer],
-    });
-
     const previewWrapper = render({
       tag: 'div',
       className: 'preview-wrapper',
-      child: [previewTitle, previewProgress],
+      child: [previewTitle, this.player],
     });
 
     this.preview = render({
