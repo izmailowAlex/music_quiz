@@ -2,23 +2,23 @@ import { render } from './../UI/render';
 import { headerListItems } from './../components/data/data';
 
 export class CreateHeaderWrapper {
-  private page;
   private gameLevel;
   private headerWrapper;
   private arrListItems: HTMLElement[];
 
   constructor(level: string) {
     const ROOT = document.querySelector('#root');
+    let page: string | undefined = '';
     this.gameLevel = level;
     this.arrListItems = [];
 
     if (ROOT && ROOT instanceof HTMLElement) {
-      if (this.page !== undefined) {
-        this.page = ROOT.dataset.id;
+      if (page !== undefined) {
+        page = ROOT.dataset.id;
       }
     }
 
-    if (this.page === 'home') {
+    if (page === 'home') {
       const headerLogo = render({
         tag: 'div',
         className: 'header-logo',
@@ -55,19 +55,6 @@ export class CreateHeaderWrapper {
         className: 'header-wrapper',
         child: [headerUp],
       });
-
-      // this.headerContain = `
-      //   <div class="header-up">
-      //     <div class="header-logo"></div>
-      //     <div class="header-nav">
-      //       <div class="header-nav__title">
-      //         <a class="header-nav__link" href="./game.html">
-      //           Start the quiz
-      //         </a>
-      //       </div>
-      //     </div>
-      //   </div>
-      // `;
     } else {
       const headerLogo = render({
         tag: 'div',
@@ -123,25 +110,6 @@ export class CreateHeaderWrapper {
         className: 'header-wrapper',
         child: [headerUp, headerNav],
       });
-
-      // this.createListItems();
-
-      // this.headerContain = `
-      //   <div class="header-up">
-      //     <div class="header-logo"></div>
-      //     <div class="header-score">Score: <span id="score">0</span></div>
-      //   </div>
-      //   <nav class="header-nav">
-      //     <ul class="header-nav__list">
-      //       <li class="header-list__item">Classic</li>
-      //       <li class="header-list__item">Russian classic</li>
-      //       <li class="header-list__item">Romantic</li>
-      //       <li class="header-list__item">Pop</li>
-      //       <li class="header-list__item">Rock</li>
-      //       <li class="header-list__item">Jazz</li>
-      //     </ul>
-      //   </nav>
-      // `;
     }
   }
 

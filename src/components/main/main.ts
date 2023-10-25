@@ -12,7 +12,6 @@ export class Main {
     const ROOT = document.querySelector('#root');
     this.moovie = new Moovie().init();
     this.game = new Game().init();
-
     let page: string | undefined = '';
 
     if (ROOT && ROOT instanceof HTMLElement) {
