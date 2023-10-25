@@ -23,8 +23,8 @@ export class Main {
 
     const gameWrapper = render({
       tag: 'div',
-      className: 'game-wrapper',
-      child: [this.game],
+      className: 'game-field',
+      child: this.game,
     });
 
     this.container = render({

@@ -1,5 +1,8 @@
-.game-wrapper {
+.game-field {
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
 }
 
 .preview {
@@ -119,4 +122,58 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+}
+
+.options {
+  border-radius: 10px;
+  border: 1px solid #666;
+  background: rgb(63, 62, 62);
+  overflow: hidden;
+}
+
+.options-list {
+  min-height: 360px;
+  height: 100%;
+  list-style: none;
+  display: grid;
+  align-items: center;
+}
+
+.options-list__item {
+  padding: 0.85rem 3rem;
+  height: 100%;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.options-list__item:hover {
+  background-color: #666;
+}
+
+.options-list__indicator {
+  margin-left: 20px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #555;
+  position: absolute;
+  top: calc(50% - 5px);
+  left: 0;
+}
+
+.correct {
+  background: #0f0;
+}
+
+.uncorrect {
+  background: #f00;
+}
+
+.options-list__item:nth-last-child(n + 2) {
+  border-bottom: 1px solid #666;
 }

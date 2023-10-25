@@ -1,4 +1,4 @@
-import { IRender } from 'src/interfaces/interfaces';
+import { IRender } from 'src/@types/types';
 
 export const render = ({
   tag,
