@@ -1,5 +1,14 @@
 import { IData } from 'src/@types/types';
 
+export const headerListItems = [
+  'Classic',
+  'Russian classic',
+  'Romantic',
+  'Pop',
+  'Rock',
+  'Jazz',
+];
+
 export const data: IData[][] = [
   // Classic
   [

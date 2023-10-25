@@ -11,8 +11,15 @@ export const render = ({
   child = [],
 }: IRender): HTMLElement => {
   const elem: HTMLElement = document.createElement(tag);
+  const classN: string[] = className.split(' ');
 
-  elem.classList.add(className);
+  if (className !== '') {
+    if (classN.length > 0) {
+      classN.forEach((item) => {
+        elem.classList.add(item);
+      });
+    }
+  }
 
   if (attributes) {
     attributes.forEach((attribute) => {
