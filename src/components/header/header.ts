@@ -15,18 +15,20 @@ export class Header {
     }
     if (page === 'home') {
       headerContain = `
-        <div class="header-logo"></div>
-        <div class="header-nav">
-          <div class="header-nav__title">
-            <a class="header-nav__link" href="./game.html">
-              Start the quiz
-            </a>
+        <div class="header-up">
+          <div class="header-logo"></div>
+          <div class="header-nav">
+            <div class="header-nav__title">
+              <a class="header-nav__link" href="./game.html">
+                Start the quiz
+              </a>
+            </div>
           </div>
         </div>
       `;
     } else if (page === 'game') {
       headerContain = `
-        <div class="header__up">
+        <div class="header-up">
           <div class="header-logo"></div>
           <div class="header__score">Score: <span id="score">0</span></div>
         </div>
