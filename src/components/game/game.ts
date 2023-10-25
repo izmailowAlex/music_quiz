@@ -7,19 +7,20 @@ export class Game {
   private preview;
   private options;
   private description;
-  // private next;
+  private buttonNext;
 
   constructor() {
     this.preview = new Preview().init();
     this.options = new Options().init();
     this.description = new Description().init();
-    // this.preview = render({
-    //   tag: 'div',
-    //   className: 'preview',
-    // });
+    this.buttonNext = render({
+      tag: 'button',
+      className: 'game-button',
+      innerHTML: 'Next Level',
+    });
   }
 
   init() {
-    return [this.preview, this.options, this.description];
+    return [this.preview, this.options, this.description, this.buttonNext];
   }
 }

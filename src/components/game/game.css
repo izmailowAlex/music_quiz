@@ -184,3 +184,15 @@
   border: 1px solid #666;
   background: rgb(63, 62, 62);
 }
+
+.game-button {
+  pointer-events: visible;
+  grid-column: 1/3;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 5px;
+  color: #e2dddd;
+  background-color: #2ea04d;
+  cursor: pointer;
+  transition: all 0.5s;
+}
