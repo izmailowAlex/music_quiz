@@ -177,3 +177,10 @@
 .options-list__item:nth-last-child(n + 2) {
   border-bottom: 1px solid #666;
 }
+
+.description {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #666;
+  background: rgb(63, 62, 62);
+}
