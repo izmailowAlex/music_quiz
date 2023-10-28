@@ -1,4 +1,16 @@
 import { IData } from 'src/@types/types';
+import bachImage from './../../assets/img/bach.png';
+import bachMp3 from './../../assets/audio/bah--ave-mariya.mp3';
+import mozartImage from './../../assets/img/mocart.png';
+import mozartMp3 from './../../assets/audio/mocart---simfoniya-40-1-chast---gp.mp3';
+import bethovenImage from './../../assets/img/bethoven.png';
+import bethovenMp3 from './../../assets/audio/bethoven.mp3';
+import scarlattiImage from './../../assets/img/scarlatti.png';
+import scarlattiMp3 from './../../assets/audio/alessandro-skarlatti-concerto-grosso-no-5-d-moll-iii---alleg.mp3';
+import haydnImage from './../../assets/img/haidn.png';
+import haydnMp3 from './../../assets/audio/y-gaydn-sonata-mi-minor-2-chast.mp3';
+import vivaldiImage from './../../assets/img/vivaldi.png';
+import vivaldiMp3 from './../../assets/audio/vival-di-vremena-goda-rington.mp3';
 
 export const headerListItems = [
   'Classic',
@@ -16,10 +28,10 @@ export const data: IData[][] = [
       id: '1',
       game: 'Classic',
       name: 'Johann Sebastian Bach',
-      mp3: './assets/audio/bah--ave-mariya.mp3',
+      mp3: bachMp3,
       attachment: 'German composer and musician',
       composition: 'Ave Maria',
-      src: './assets/img/bach.png',
+      src: bachImage,
       alt: 'Composer',
       description:
         '31 March [O.S. 21 March] 1685 – 28 July 1750. The Bach family already counted several composers when Johann Sebastian was born as the last child of a city musician in Eisenach.',
@@ -28,10 +40,10 @@ export const data: IData[][] = [
       id: '2',
       game: 'Classic',
       name: 'Wolfgang Amadeus Mozart',
-      mp3: './assets/audio/mocart---simfoniya-40-1-chast---gp.mp3',
+      mp3: mozartMp3,
       attachment: 'Austrian composer and virtuoso musician',
       composition: 'Symphony N40, part I',
-      src: './assets/img/mocart.png',
+      src: mozartImage,
       alt: 'Composer',
       description:
         '27 January 1756 – 5 December 1791. Born in Salzburg, in the Holy Roman Empire, Mozart showed prodigious ability from his earliest childhood. Already competent on keyboard and violin, he composed from the age of five and performed before European royalty.',
@@ -40,10 +52,10 @@ export const data: IData[][] = [
       id: '3',
       game: 'Classic',
       name: 'Ludwig van Beethoven',
-      mp3: './assets/audio/bethoven.mp3',
+      mp3: bethovenMp3,
       attachment: 'German composer, pianist and conductor',
       composition: 'Symphony N5',
-      src: './assets/img/bethoven.png',
+      src: bethovenImage,
       alt: 'Composer',
       description:
         'baptised 17 December 1770 – 26 March 1827. His career has conventionally been divided into early, middle, and late periods. His early period, during which he forged his craft, is typically considered to have lasted until 1802.',
@@ -52,10 +64,10 @@ export const data: IData[][] = [
       id: '4',
       game: 'Classic',
       name: 'Domenico Scarlatti',
-      mp3: './assets/audio/alessandro-skarlatti-concerto-grosso-no-5-d-moll-iii---alleg.mp3',
+      mp3: scarlattiMp3,
       attachment: 'Italian composer and harpsichordist',
       composition: 'Concerto-grosso N5 Allegro',
-      src: './assets/img/scarlatti.png',
+      src: scarlattiImage,
       alt: 'Composer',
       description:
         '26 October 1685 – 23 July 1757. He is classified primarily as a Baroque composer chronologically, although his music was influential in the development of the Classical style.',
@@ -64,10 +76,10 @@ export const data: IData[][] = [
       id: '5',
       game: 'Classic',
       name: 'Franz Joseph Haydn',
-      mp3: './assets/audio/y-gaydn-sonata-mi-minor-2-chast.mp3',
+      mp3: haydnMp3,
       attachment: 'Austrian composer',
       composition: 'Sonata mi-minor, part II',
-      src: './assets/img/haidn.png',
+      src: haydnImage,
       alt: 'Composer',
       description:
         '31 March[b] 1732 – 31 May 1809) was an Austrian composer of the Classical period. Haydn spent much of his career as a court musician for the wealthy Esterházy family at their Eszterháza Castle.',
@@ -76,10 +88,10 @@ export const data: IData[][] = [
       id: '6',
       game: 'Classic',
       name: 'Antonio Lucio Vivaldi',
-      mp3: './assets/audio/vival-di-vremena-goda-rington.mp3',
+      mp3: vivaldiMp3,
       attachment: 'Italian composer and virtuoso violinist',
       composition: 'Seasons Autumn',
-      src: './assets/img/vivaldi.png',
+      src: vivaldiImage,
       alt: 'Composer',
       description:
         "4 March 1678 – 28 July 1741. He consolidated the emerging concerto form into a widely accepted and followed idiom, which was paramount in the development of Johann Sebastian Bach's instrumental music.",

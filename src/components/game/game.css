@@ -61,6 +61,11 @@
   cursor: pointer;
 }
 
+.play .player__btn {
+  background-image: url(./../../assets/img/pause.png);
+  background-position-x: 49%;
+}
+
 .player-wrapper {
   width: 90%;
   margin-left: auto;
@@ -69,43 +74,48 @@
 
 .player-progress {
   position: relative;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #666;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .player-progress-bar,
 .player__description-bar {
-  width: 100%;
-  cursor: pointer;
+  width: 0%;
   position: absolute;
   appearance: none; /* отключаем основной */
   -webkit-appearance: none; /* отключаем основной */
+  cursor: pointer;
 }
 
 /*поле по которому ездит слайдер */
 .player-progress-bar::-webkit-slider-runnable-track,
 .player__description-bar::-webkit-slider-runnable-track {
-  background-color: #666;
+  height: 5px;
   border: none;
-  border-radius: 2px;
-  height: 2px;
+  background: #087140;
 }
 
 /*сам курсор который ездит по полю*/
 .player-progress-bar::-webkit-slider-thumb,
 .player__description-bar::-webkit-slider-thumb {
   -webkit-appearance: none; /*отключаем основной*/
-  display: block;
+  /* display: block;
   width: 15px;
   height: 15px;
   margin-top: -6.5px;
-  background-color: #666;
-  border-radius: 50%;
+  background-color: #26863f;
+  border-radius: 50%; */
 }
 
 .player-progress-bar:hover::-webkit-slider-runnable-track,
 .player-progress-bar:focus::-webkit-slider-runnable-track,
 .player__description-bar:hover::-webkit-slider-runnable-track,
 .player__description-bar:focus::-webkit-slider-runnable-track {
-  background-color: #087140;
+  background-color: #26863f;
 }
 
 .player-progress-bar:hover::-webkit-slider-thumb,

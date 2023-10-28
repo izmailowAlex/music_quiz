@@ -25,3 +25,8 @@ export type IData = {
   alt: string;
   description: string;
 };
+
+export type IState = {
+  level: number;
+  currentObj: IData;
+};

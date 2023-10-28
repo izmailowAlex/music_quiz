@@ -4,8 +4,11 @@ import { data } from './../../data/data';
 export class Options {
   private options;
   private optionsList;
+  public dataGameArray;
 
-  constructor() {
+  constructor(level: number) {
+    this.dataGameArray = level;
+
     this.optionsList = render({
       tag: 'ul',
       className: 'options-list',
@@ -20,7 +23,7 @@ export class Options {
   }
 
   createListOptions(list: HTMLElement) {
-    data[0].forEach((item) => {
+    data[this.dataGameArray].forEach((item) => {
       const indicator = render({
         tag: 'span',
         className: 'options-list__indicator',

@@ -1,13 +1,14 @@
 import { render } from '../../../UI/render';
 import png from './../../../assets/img/empty.png';
 import { Player } from '../../Player/Player';
+import { state } from './../../../state/state';
 
 export class Preview {
   private preview;
   private player;
 
   constructor() {
-    this.player = new Player().init();
+    this.player = new Player('main').init();
 
     const previewImageImg = render({
       tag: 'img',

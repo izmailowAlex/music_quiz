@@ -40,7 +40,7 @@ module.exports = {
         use: ['ts-loader'],
       },
       {
-        test: /\.(?:ico|gif|png|jpe?g)$/i,
+        test: /\.(?:ico|gif|png|jpe?g|mp3)$/i,
         type: 'asset/resource',
       },
       {

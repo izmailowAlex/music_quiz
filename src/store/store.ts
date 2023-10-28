@@ -6,7 +6,7 @@ export class CreateHeaderWrapper {
   private headerWrapper;
   private arrListItems: HTMLElement[];
 
-  constructor(level: string) {
+  constructor(level: number) {
     const ROOT = document.querySelector('#root');
     let page: string | undefined = '';
     this.gameLevel = level;
@@ -76,7 +76,7 @@ export class CreateHeaderWrapper {
 
       headerListItems.forEach((item, id) => {
         let className = 'header-list__item';
-        if (String(id + 1) === this.gameLevel) {
+        if (id === this.gameLevel) {
           className = 'header-list__item active';
         }
         const listItem = render({
