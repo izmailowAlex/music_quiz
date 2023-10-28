@@ -51,6 +51,7 @@
 .player__btn {
   width: 40px;
   height: 40px;
+  outline: none;
   border: 2px solid #2ea04d;
   border-radius: 50%;
   background-image: url(./../../assets/img/play.png);
@@ -86,6 +87,7 @@
 .player__description-bar {
   width: 0%;
   position: absolute;
+  outline: none;
   appearance: none; /* отключаем основной */
   -webkit-appearance: none; /* отключаем основной */
   cursor: pointer;

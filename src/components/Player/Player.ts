@@ -113,7 +113,7 @@ export class Player {
   }
 
   setProgress(e: MouseEvent) {
-    const target = e.target as HTMLElement;
+    const target = e.currentTarget as HTMLDivElement;
     const width = target.clientWidth;
     const clickX = e.offsetX;
     const duration = this.playerAudio.duration;
