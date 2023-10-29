@@ -6,6 +6,7 @@ import pause from './../../assets/img/pause.png';
 export class Player {
   private player;
   private playerAudio;
+  // private timeCurrent: string;
   private playerButton;
   public playerProgress;
   public playerProgressBar;
@@ -39,20 +40,25 @@ export class Player {
       className: 'player-progress',
       child: [this.playerProgressBar],
     });
-
     const playerTimeCurrent = render({
       tag: 'div',
       className: 'player-time-current',
-      innerHTML: '00:00',
     });
+    setInterval(() => {
+      playerTimeCurrent.innerHTML = this.timePrepair(
+        this.playerAudio.currentTime
+      );
+    }, 100);
 
     const playerTimeFull = render({
       tag: 'div',
       className: 'player-time-full',
-      innerHTML: '00:00',
     });
+    setTimeout(() => {
+      playerTimeFull.innerHTML = this.timePrepair(this.playerAudio.duration);
+    }, 100);
 
-    const playerTime = render({
+    const playerTimeField = render({
       tag: 'div',
       className: 'player-time',
       child: [playerTimeCurrent, playerTimeFull],
@@ -61,7 +67,7 @@ export class Player {
     const playerWrapper = render({
       tag: 'div',
       className: 'player-wrapper',
-      child: [this.playerProgress, playerTime],
+      child: [this.playerProgress, playerTimeField],
     });
 
     this.player = render({
@@ -75,7 +81,7 @@ export class Player {
       if (this.checkStatusAudio() !== true) {
         this.playAudio();
       } else {
-        this.pauseAudio();
+        this.stopAudio();
       }
     });
     this.playerProgress.addEventListener('click', (event) => {
@@ -85,7 +91,7 @@ export class Player {
       this.updateProgress(event);
     });
     this.playerAudio.addEventListener('ended', () => {
-      this.pauseAudio();
+      this.stopAudio();
     });
   }
 
@@ -94,7 +100,7 @@ export class Player {
     this.playerAudio.play();
   }
 
-  pauseAudio() {
+  stopAudio() {
     this.player.classList.toggle('play');
     this.playerAudio.pause();
   }
@@ -119,6 +125,18 @@ export class Player {
     const duration = this.playerAudio.duration;
 
     this.playerAudio.currentTime = (clickX / width) * duration;
+  }
+
+  timePrepair(time: number) {
+    let min = String(Math.floor(time / 60));
+    if (Number(min) < 10) {
+      min = `0${min}`;
+    }
+    let sec = String(Math.floor(time % 60));
+    if (Number(sec) < 10) {
+      sec = `0${sec}`;
+    }
+    return `${min}:${sec}`;
   }
 
   init() {
