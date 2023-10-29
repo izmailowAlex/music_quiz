@@ -1,3 +1,5 @@
-import "./style.css";
+import './style.css';
+import { App } from './app';
 
-console.log("Hi");
+const app = new App();
+app.init();

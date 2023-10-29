@@ -1,0 +1,62 @@
+.footer {
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.app[data-id='home'] .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.contributors {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.contributors__link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--grey-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.contributors__icon {
+  display: inline-block;
+}
+
+.contributors__link-label {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.footer-year {
+  color: var(--grey-dark-color);
+  font-size: 16px;
+}
+
+.footer-year:before {
+  content: '© ';
+}
+
+.github {
+  width: 30px;
+  height: 30px;
+}
+
+.item__title {
+  transition: all 0.3s ease-in-out;
+}
+
+.contributors__link:hover {
+  color: var(--base-color);
+}
+
+.contributors__link:hover path {
+  fill: var(--base-color);
+}
