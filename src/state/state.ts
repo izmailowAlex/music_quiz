@@ -1,5 +1,4 @@
 import { IState } from './../@types/types';
-import { IData } from './../@types/types';
 
 export const state: IState = {
   level: 0,
@@ -14,4 +13,6 @@ export const state: IState = {
     alt: '',
     description: '',
   },
+  selectedElems: [],
+  selectedComposer: '',
 };

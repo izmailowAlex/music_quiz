@@ -1,16 +1,16 @@
-import { IData } from 'src/@types/types';
-import bachImage from './../../assets/img/bach.png';
-import bachMp3 from './../../assets/audio/bah--ave-mariya.mp3';
-import mozartImage from './../../assets/img/mocart.png';
-import mozartMp3 from './../../assets/audio/mocart---simfoniya-40-1-chast---gp.mp3';
-import bethovenImage from './../../assets/img/bethoven.png';
-import bethovenMp3 from './../../assets/audio/bethoven.mp3';
-import scarlattiImage from './../../assets/img/scarlatti.png';
-import scarlattiMp3 from './../../assets/audio/alessandro-skarlatti-concerto-grosso-no-5-d-moll-iii---alleg.mp3';
-import haydnImage from './../../assets/img/haidn.png';
-import haydnMp3 from './../../assets/audio/y-gaydn-sonata-mi-minor-2-chast.mp3';
-import vivaldiImage from './../../assets/img/vivaldi.png';
-import vivaldiMp3 from './../../assets/audio/vival-di-vremena-goda-rington.mp3';
+import { IData } from './../@types/types';
+import bachImage from './../assets/img/bach.png';
+import bachMp3 from './../assets/audio/bah--ave-mariya.mp3';
+import mozartImage from './../assets/img/mocart.png';
+import mozartMp3 from './../assets/audio/mocart---simfoniya-40-1-chast---gp.mp3';
+import bethovenImage from './../assets/img/bethoven.png';
+import bethovenMp3 from './../assets/audio/bethoven.mp3';
+import scarlattiImage from './../assets/img/scarlatti.png';
+import scarlattiMp3 from './../assets/audio/alessandro-skarlatti-concerto-grosso-no-5-d-moll-iii---alleg.mp3';
+import haydnImage from './../assets/img/haidn.png';
+import haydnMp3 from './../assets/audio/y-gaydn-sonata-mi-minor-2-chast.mp3';
+import vivaldiImage from './../assets/img/vivaldi.png';
+import vivaldiMp3 from './../assets/audio/vival-di-vremena-goda-rington.mp3';
 
 export const headerListItems = [
   'Classic',

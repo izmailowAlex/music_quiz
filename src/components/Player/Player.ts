@@ -1,81 +1,30 @@
-import { render } from '../../UI/render';
+import { render } from './../../UI/render';
 import { state } from './../../state/state';
-import play from './../../assets/img/play.png';
-import pause from './../../assets/img/pause.png';
 
 export class Player {
+  private part;
   private player;
   private playerAudio;
-  // private timeCurrent: string;
   private playerButton;
   public playerProgress;
   public playerProgressBar;
+  public playerTimeCurrent;
+  public playerTimeFull;
 
   constructor(part: string) {
-    this.playerAudio = render({
-      tag: 'audio',
-      attributes: [{ attr: 'src', sign: state.currentObj.mp3 }],
-      id: part,
-    }) as HTMLAudioElement;
-
-    this.playerButton = render({
-      tag: 'button',
-      className: 'player__btn',
-      id: 'play',
-    });
-
-    this.playerProgressBar = render({
-      tag: 'input',
-      className: 'player-progress-bar',
-      attributes: [
-        { attr: 'type', sign: 'range' },
-        { attr: 'min', sign: '0' },
-        { attr: 'name', sign: 'input' },
-        { attr: 'value', sign: '0' },
-      ],
-    });
-
-    this.playerProgress = render({
-      tag: 'div',
-      className: 'player-progress',
-      child: [this.playerProgressBar],
-    });
-    const playerTimeCurrent = render({
-      tag: 'div',
-      className: 'player-time-current',
-    });
-    setInterval(() => {
-      playerTimeCurrent.innerHTML = this.timePrepair(
-        this.playerAudio.currentTime
-      );
-    }, 100);
-
-    const playerTimeFull = render({
-      tag: 'div',
-      className: 'player-time-full',
-    });
-    setTimeout(() => {
-      playerTimeFull.innerHTML = this.timePrepair(this.playerAudio.duration);
-    }, 100);
-
-    const playerTimeField = render({
-      tag: 'div',
-      className: 'player-time',
-      child: [playerTimeCurrent, playerTimeFull],
-    });
-
-    const playerWrapper = render({
-      tag: 'div',
-      className: 'player-wrapper',
-      child: [this.playerProgress, playerTimeField],
-    });
-
-    this.player = render({
-      tag: 'div',
-      className: 'player',
-      child: [this.playerButton, playerWrapper],
-    });
-    this.player.append(this.playerAudio);
+    this.part = part;
+    this.player = this.create();
+    this.playerAudio = this.player.querySelector('.audio') as HTMLAudioElement;
+    this.playerButton = this.player.querySelector(
+      '.player__btn'
+    ) as HTMLButtonElement;
+    this.playerTimeCurrent = this.player.querySelector('.player-time-current');
+    this.playerTimeFull = this.player.querySelector('.player-time-full');
+    this.playerTimeFull = this.player.querySelector('.player-time-full');
+    this.playerProgress = this.player.querySelector(
+      '.player-progress'
+    ) as HTMLElement;
+    this.playerProgressBar = this.player.querySelector('.player-progress-bar');
 
     this.playerButton.addEventListener('click', () => {
       if (this.checkStatusAudio() !== true) {
@@ -93,6 +42,48 @@ export class Player {
     this.playerAudio.addEventListener('ended', () => {
       this.stopAudio();
     });
+  }
+
+  create() {
+    const playerContain = `
+      <button class="player__btn" id="play"></button>
+      <div class="player-wrapper">
+        <div class="player-progress">
+          <input class="player-progress-bar" type="range" min="0" name="input" value="0"/>
+        </div>
+        <div class="player-time">
+          <div class="player-time-current">${this.updateCurrentTime()}</div>
+          <div class="player-time-full">${this.updateFullTime()}</div>
+        </div>
+      </div>
+      <audio class="audio" src="${state.currentObj.mp3}" id="${
+        this.part
+      }"></audio>
+    `;
+
+    const player = render({
+      tag: 'div',
+      className: 'player',
+      innerHTML: playerContain,
+    });
+
+    return player;
+  }
+
+  updateCurrentTime() {
+    return setInterval(() => {
+      this.playerTimeCurrent!.innerHTML = this.timePrepair(
+        this.playerAudio.currentTime
+      );
+    }, 100);
+  }
+
+  updateFullTime() {
+    return setTimeout(() => {
+      this.playerTimeFull!.innerHTML = this.timePrepair(
+        this.playerAudio.duration
+      );
+    }, 100);
   }
 
   playAudio() {

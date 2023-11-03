@@ -11,6 +11,8 @@ export type IRender = {
   src?: string;
   alt?: string;
   innerHTML?: string;
+  btn?: boolean;
+  disabled?: string;
   child?: HTMLElement[] | null;
 };
 
@@ -29,4 +31,6 @@ export type IData = {
 export type IState = {
   level: number;
   currentObj: IData;
+  selectedElems: HTMLElement[];
+  selectedComposer: string;
 };

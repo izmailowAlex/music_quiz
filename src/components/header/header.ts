@@ -1,28 +1,70 @@
-import { render } from '../../UI/render';
-import { CreateHeaderWrapper } from './../../store/store';
+import { render } from './../../UI/render';
+import { headerListItems } from './../../data/data';
 import { state } from './../../state/state';
+import { renderLiList } from './../../store/store';
 
-export class Header {
+class Header {
   private header;
-  private headerWrapper;
+  private page;
 
-  constructor() {
-    this.headerWrapper = new CreateHeaderWrapper(state.level).init();
-
-    const container = render({
-      tag: 'div',
-      className: 'container',
-      child: [this.headerWrapper],
-    });
-
+  constructor(page: string) {
+    this.page = page;
     this.header = render({
       tag: 'header',
       className: 'header',
-      child: [container],
+      child: [this.create()],
     });
+  }
+
+  private create() {
+    let container = render({
+      tag: 'div',
+      className: 'container',
+    });
+
+    const homeContain = `
+      <div class="header-wrapper">
+        <div class="header-up">
+          <div class="header-logo"></div>
+          <nav class="header-nav">
+            <div class="header-nav__title">
+              <a class="header-nav__link" href="./game.html">
+                Start the quiz
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    `;
+    const gameContain = `
+      <div class="header-wrapper">
+        <div class="header-up">
+          <div class="header-logo"></div>
+          <div class="header-score">
+            Score: <span id="score">0</span>
+          </div>
+        </div>
+        <div class="header-nav">
+          <ul class="header-nav__list">${renderLiList(
+            headerListItems,
+            state.level
+          )}</ul>
+        </div>
+      </div>
+    `;
+
+    if (this.page === 'home') {
+      container.innerHTML = homeContain;
+    } else {
+      container.innerHTML = gameContain;
+    }
+
+    return container;
   }
 
   init() {
     return this.header;
   }
 }
+
+export default Header;

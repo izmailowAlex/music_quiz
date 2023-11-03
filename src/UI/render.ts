@@ -1,4 +1,4 @@
-import { IRender } from 'src/@types/types';
+import { IRender } from './../@types/types';
 
 export const render = ({
   tag,
@@ -8,6 +8,8 @@ export const render = ({
   src = '',
   alt = '',
   innerHTML = '',
+  btn,
+  disabled = 'false',
   child = [],
 }: IRender): HTMLElement => {
   const elem: HTMLElement = document.createElement(tag);
@@ -41,6 +43,10 @@ export const render = ({
 
   if (innerHTML) {
     elem.innerHTML = innerHTML;
+  }
+
+  if (btn) {
+    elem.setAttribute('disabled', disabled);
   }
 
   if (child) {
