@@ -13,6 +13,7 @@ export const state: IState = {
     alt: '',
     description: '',
   },
-  selectedElems: [],
+  selectedLiElems: [],
+  selectedItemObj: [],
   selectedComposer: '',
 };

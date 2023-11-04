@@ -31,6 +31,7 @@ export type IData = {
 export type IState = {
   level: number;
   currentObj: IData;
-  selectedElems: HTMLElement[];
+  selectedLiElems: HTMLElement[];
+  selectedItemObj: IData[];
   selectedComposer: string;
 };

@@ -1,6 +1,8 @@
+import { IData } from './../../@types/types';
 import { render } from './../../UI/render';
 import { data } from './../../data/data';
 import { state } from './../../state/state';
+import { Description } from './../Description/Description';
 
 export class Options {
   private static root: HTMLElement | null = document.querySelector('#root');
@@ -43,15 +45,26 @@ export class Options {
 
     this.listItemsArray.forEach((item) => {
       item.addEventListener('click', () => {
+        const selectedObject = data[this.dataGameArray].find((comp: IData) => {
+          const array = Object.values(comp);
+          if (array.includes(item.innerText)) {
+            return true;
+          }
+        }) as IData;
+        state.selectedItemObj.splice(0, 1, selectedObject);
+
         state.selectedComposer = item.innerText;
-        if (!state.selectedElems.includes(item)) {
-          state.selectedElems.push(item);
+        new Description(state.selectedComposer).update();
+        if (!state.selectedLiElems.includes(item)) {
+          state.selectedLiElems.push(item);
         } else return;
       });
     });
 
     return optionsList;
   }
+
+  prepairState() {}
 
   init() {
     return this.options;

@@ -5,6 +5,7 @@ export class Player {
   private part;
   private player;
   private playerAudio;
+  private currentAudioTrack;
   private playerButton;
   public playerProgress;
   public playerProgressBar;
@@ -13,6 +14,11 @@ export class Player {
 
   constructor(part: string) {
     this.part = part;
+    if (part !== 'main' && state.selectedItemObj.length !== 0) {
+      this.currentAudioTrack = state.selectedItemObj[0].mp3;
+    } else {
+      this.currentAudioTrack = state.currentObj.mp3;
+    }
     this.player = this.create();
     this.playerAudio = this.player.querySelector('.audio') as HTMLAudioElement;
     this.playerButton = this.player.querySelector(
@@ -56,7 +62,7 @@ export class Player {
           <div class="player-time-full">${this.updateFullTime()}</div>
         </div>
       </div>
-      <audio class="audio" src="${state.currentObj.mp3}" id="${
+      <audio class="audio" src="${this.currentAudioTrack}" id="${
         this.part
       }"></audio>
     `;

@@ -14,3 +14,10 @@ export const renderLiList = (headerListItems: string[], level: number) => {
   );
   return liList;
 };
+
+export const stopAudio = (player: HTMLDivElement, audio: HTMLAudioElement) => {
+  if (player.classList.contains('play')) {
+    player.classList.toggle('play');
+  }
+  audio.pause();
+};
