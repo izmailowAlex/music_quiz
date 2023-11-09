@@ -47,7 +47,7 @@ export class Description {
           <div class="description-music">${this.selectedDataObj.composition}</div>
         </div>
       </div>
-      <div class="description-text"></div>
+      <div class="description-text">${this.selectedDataObj.description}</div>
     `;
 
     this.descriptionElem.innerHTML = '';
