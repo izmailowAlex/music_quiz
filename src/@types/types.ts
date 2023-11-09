@@ -4,7 +4,7 @@ type IObject = {
 };
 
 export type IRender = {
-  tag: string;
+  tag?: string;
   className?: string;
   attributes?: IObject[];
   id?: string;
@@ -30,8 +30,9 @@ export type IData = {
 
 export type IState = {
   level: number;
+  score: number;
   currentObj: IData;
   selectedLiElems: HTMLElement[];
-  selectedItemObj: IData[];
+  selectedDataObj: IData[];
   selectedComposer: string;
 };

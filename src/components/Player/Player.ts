@@ -14,8 +14,8 @@ export class Player {
 
   constructor(part: string) {
     this.part = part;
-    if (part !== 'main' && state.selectedItemObj.length !== 0) {
-      this.currentAudioTrack = state.selectedItemObj[0].mp3;
+    if (part !== 'main' && state.selectedDataObj.length > 0) {
+      this.currentAudioTrack = state.selectedDataObj[0].mp3;
     } else {
       this.currentAudioTrack = state.currentObj.mp3;
     }

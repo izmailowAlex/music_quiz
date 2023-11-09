@@ -7,10 +7,12 @@ export class Description {
   private selectedComposer;
   private description;
   private descriptionElem;
+  private selectedDataObj;
   private player;
 
   constructor(selectedComposer: string) {
     this.selectedComposer = selectedComposer;
+    this.selectedDataObj = state.selectedDataObj[0];
     this.player = new Player('description').init() as HTMLDivElement;
     this.descriptionElem = document.querySelector(
       '.description'
@@ -37,12 +39,12 @@ export class Description {
     const descriptionContain = `
       <div class="description-preview">
         <div class="description-image">
-          <img class="description-image__img" src="${state.selectedItemObj[0].src}" alt="${state.selectedItemObj[0].alt}"/>
+          <img class="description-image__img" src="${this.selectedDataObj.src}" alt="${this.selectedDataObj.alt}"/>
         </div>
         <div class="description-wrapper">
-          <h2 class="description__title">${state.selectedItemObj[0].name}</h2>
-          <div class="description-attachment">${state.selectedItemObj[0].attachment}</div>
-          <div class="description-music">${state.selectedItemObj[0].composition}</div>
+          <h2 class="description__title">${this.selectedDataObj.name}</h2>
+          <div class="description-attachment">${this.selectedDataObj.attachment}</div>
+          <div class="description-music">${this.selectedDataObj.composition}</div>
         </div>
       </div>
       <div class="description-text"></div>

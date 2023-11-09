@@ -1,7 +1,7 @@
 import { IRender } from './../@types/types';
 
 export const render = ({
-  tag,
+  tag = '',
   className = '',
   attributes,
   id = '',

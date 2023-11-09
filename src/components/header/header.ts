@@ -41,7 +41,7 @@ class Header {
         <div class="header-up">
           <div class="header-logo"></div>
           <div class="header-score">
-            Score: <span id="score">0</span>
+            Score: <span id="score">${state.score}</span>
           </div>
         </div>
         <div class="header-nav">
@@ -60,6 +60,12 @@ class Header {
     }
 
     return container;
+  }
+
+  public update() {
+    const header = document.querySelector('.header') as HTMLElement;
+    header.innerHTML = '';
+    header.append(this.create());
   }
 
   init() {
