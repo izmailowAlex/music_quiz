@@ -1,5 +1,5 @@
 import { render } from './../../UI/render';
-import { Player } from './../Player/Player';
+import { Player } from '../Player/Player';
 import { state } from './../../state/state';
 import { stopAudio } from './../../store/store';
 

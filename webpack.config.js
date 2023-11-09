@@ -40,23 +40,29 @@ module.exports = {
         use: ['ts-loader'],
       },
       {
-        test: /\.(?:ico|gif|png|jpe?g|mp3)$/i,
+        test: /\.(?:ico|gif|png|jpe?g|svg)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][ext]',
+        },
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        test: /\.(mp3)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/audio/[name][ext]',
+        },
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|)$/,
         type: 'asset/inline',
       },
       {
         test: /\.(mov|mp4)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/video/[name][ext]',
+        },
       },
       {
         test: /\.css$/,
