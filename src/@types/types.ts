@@ -4,13 +4,15 @@ type IObject = {
 };
 
 export type IRender = {
-  tag: string;
+  tag?: string;
   className?: string;
   attributes?: IObject[];
   id?: string;
   src?: string;
   alt?: string;
   innerHTML?: string;
+  btn?: boolean;
+  disabled?: string;
   child?: HTMLElement[] | null;
 };
 
@@ -28,5 +30,9 @@ export type IData = {
 
 export type IState = {
   level: number;
+  score: number;
   currentObj: IData;
+  selectedLiElems: HTMLElement[];
+  selectedDataObj: IData[];
+  selectedComposer: string;
 };

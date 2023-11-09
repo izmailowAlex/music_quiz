@@ -5,6 +5,10 @@ export class Moovie {
   private video;
 
   constructor() {
+    this.video = this.create();
+  }
+
+  private create() {
     const source = render({
       tag: 'source',
       attributes: [
@@ -14,7 +18,7 @@ export class Moovie {
       className: 'source',
     });
 
-    this.video = render({
+    const video = render({
       tag: 'video',
       attributes: [
         { attr: 'autoplay', sign: 'autoplay' },
@@ -24,6 +28,8 @@ export class Moovie {
       className: 'video',
       child: [source],
     });
+
+    return video;
   }
 
   init() {

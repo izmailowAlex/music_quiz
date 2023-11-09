@@ -1,119 +1,23 @@
-import { render } from './../UI/render';
-import { headerListItems } from './../components/data/data';
+export const renderLIElem = (inner: string, classN: string) => {
+  return `<li class="${classN}">${inner}</li>`;
+};
 
-export class CreateHeaderWrapper {
-  private gameLevel;
-  private headerWrapper;
-  private arrListItems: HTMLElement[];
+export const renderLiList = (headerListItems: string[], level: number) => {
+  const liList = headerListItems.reduce(
+    (acc: string, item: string, index: number) =>
+      acc +
+      renderLIElem(
+        item,
+        index === level ? 'header-list__item' : 'header-list__item active'
+      ),
+    ''
+  );
+  return liList;
+};
 
-  constructor(level: number) {
-    const ROOT = document.querySelector('#root');
-    let page: string | undefined = '';
-    this.gameLevel = level;
-    this.arrListItems = [];
-
-    if (ROOT && ROOT instanceof HTMLElement) {
-      if (page !== undefined) {
-        page = ROOT.dataset.id;
-      }
-    }
-
-    if (page === 'home') {
-      const headerLogo = render({
-        tag: 'div',
-        className: 'header-logo',
-      });
-
-      const headerNavLink = render({
-        tag: 'a',
-        className: 'header-nav__link',
-        attributes: [{ attr: 'href', sign: './game.html' }],
-        innerHTML: 'Start the quiz',
-        child: [],
-      });
-
-      const headerNavTitle = render({
-        tag: 'div',
-        className: 'header-nav__title',
-        child: [headerNavLink],
-      });
-
-      const headerNav = render({
-        tag: 'div',
-        className: 'header-nav',
-        child: [headerNavTitle],
-      });
-
-      const headerUp = render({
-        tag: 'div',
-        className: 'header-up',
-        child: [headerLogo, headerNav],
-      });
-
-      this.headerWrapper = render({
-        tag: 'div',
-        className: 'header-wrapper',
-        child: [headerUp],
-      });
-    } else {
-      const headerLogo = render({
-        tag: 'div',
-        className: 'header-logo',
-      });
-
-      const headerScoreSpan = render({
-        tag: 'span',
-        id: 'score',
-        innerHTML: '0',
-      });
-
-      const headerScore = render({
-        tag: 'div',
-        className: 'header-score',
-        innerHTML: 'Score: ',
-        child: [headerScoreSpan],
-      });
-
-      headerListItems.forEach((item, id) => {
-        let className = 'header-list__item';
-        if (id === this.gameLevel) {
-          className = 'header-list__item active';
-        }
-        const listItem = render({
-          tag: 'li',
-          className: className,
-          innerHTML: item,
-        });
-        this.arrListItems.push(listItem);
-      });
-
-      const headerNavList = render({
-        tag: 'ul',
-        className: 'header-nav__list',
-        child: this.arrListItems,
-      });
-
-      const headerUp = render({
-        tag: 'div',
-        className: 'header-up',
-        child: [headerLogo, headerScore],
-      });
-
-      const headerNav = render({
-        tag: 'nav',
-        className: 'header-nav',
-        child: [headerNavList],
-      });
-
-      this.headerWrapper = render({
-        tag: 'div',
-        className: 'header-wrapper',
-        child: [headerUp, headerNav],
-      });
-    }
+export const stopAudio = (player: HTMLDivElement, audio: HTMLAudioElement) => {
+  if (player.classList.contains('play')) {
+    player.classList.toggle('play');
   }
-
-  init() {
-    return this.headerWrapper;
-  }
-}
+  audio.pause();
+};

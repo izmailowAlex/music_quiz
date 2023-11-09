@@ -1,20 +1,18 @@
-import { render } from '../../UI/render';
+import { render } from './../../UI/render';
 
-export class Footer {
+class Footer {
   private footer;
 
   constructor() {
-    const ROOT = document.querySelector('#root');
-    let page: string | undefined = '';
-    let footerContain = '';
+    this.footer = render({
+      tag: 'footer',
+      className: 'footer',
+      child: [this.create()],
+    });
+  }
 
-    if (ROOT && ROOT instanceof HTMLElement) {
-      if (page !== undefined) {
-        page = ROOT.dataset.id;
-      }
-    }
-
-    footerContain = `
+  private create() {
+    const footerContain = `
       <div class="contributors">
         <a href="https://github.com/izmailowAlex/" class="contributors__link" rel="noreferrer" target="_blank">
           <span class="contributors__icon github">
@@ -36,14 +34,12 @@ export class Footer {
       innerHTML: footerContain,
     });
 
-    this.footer = render({
-      tag: 'footer',
-      className: 'footer',
-      child: [container],
-    });
+    return container;
   }
 
   init() {
     return this.footer;
   }
 }
+
+export default Footer;

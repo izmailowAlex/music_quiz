@@ -1,26 +1,30 @@
-import { Header } from './components/Header/Header';
-import { Main } from './components/Main/Main';
-import { Footer } from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
 
-export class App {
-  private root;
-  private header;
-  private main;
-  private footer;
+export default class App {
+  private static root: HTMLElement | null = document.querySelector('#root');
 
-  constructor() {
-    this.root = document.querySelector('#root');
-    this.header = new Header().init();
-    this.main = new Main().init();
-    this.footer = new Footer().init();
+  static renderNewPage(root: Element | null) {
+    let page;
+    if (root && root instanceof HTMLElement) {
+      page = root.dataset.id;
+    }
+    const header = new Header(page!).init();
+    const footer = new Footer().init();
+    const main = new Main(page!).init();
+
+    if (root) {
+      root.append(header);
+      if (main) {
+        const mainBlock = main;
+        root.append(mainBlock);
+      }
+      root.append(footer);
+    }
   }
 
-  init() {
-    if (this.root && this.root instanceof HTMLElement) {
-      this.root.append(this.header);
-      this.root.append(this.main);
-      this.root.append(this.footer);
-    }
-    return this.root;
+  render() {
+    App.renderNewPage(App.root);
   }
 }

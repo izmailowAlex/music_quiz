@@ -1,0 +1,35 @@
+.preview {
+  grid-column: 1/3;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+  background: #3f3e3e;
+}
+
+.preview-image {
+  width: 144px;
+  height: 170px;
+}
+
+.preview-image__img {
+  width: 100%;
+  height: 100%;
+}
+
+.preview-wrapper {
+  width: 100%;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.preview__title {
+  height: 30%;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 40px;
+  color: #fff;
+  border-bottom: 1px solid #555;
+}
