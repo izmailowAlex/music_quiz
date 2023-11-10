@@ -38,13 +38,14 @@ class Main {
 
   private create() {
     this.accumState();
+    console.log(state.level);
     const preview = new Preview().init();
     const options = new Options(state.level, this.score).init();
     const description = new Description(state.selectedComposer).init();
     const buttonNext = render({
       tag: 'button',
       className: 'game-button-next',
-      innerHTML: 'Next Level',
+      innerHTML: state.level !== data.length - 1 ? 'Next Level' : 'Show result',
       btn: true,
       disabled: 'true',
     });

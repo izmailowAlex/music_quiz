@@ -1,7 +1,7 @@
 .description {
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #666;
+  border: 1px solid #555;
   background: rgb(63, 62, 62);
 }
 
@@ -39,7 +39,7 @@
 
 .description__title {
   font-size: 20px;
-  line-height: 32px;
+  line-height: 24px;
 }
 
 .description-music {

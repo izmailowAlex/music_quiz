@@ -17,7 +17,7 @@ export class Preview {
         <img class="preview-image__img" src="${png}" alt="Preview image"/>
       </div>
       <div class="preview-wrapper">
-        <div class="preview__title">* * *</div>
+        <div class="preview__title">* * * * *</div>
       </div>
     `;
 
