@@ -9,7 +9,7 @@
   width: 40px;
   height: 40px;
   outline: none;
-  border: 2px solid #2ea04d;
+  border: 2px solid #008966;
   border-radius: 50%;
   background-image: url(./../../assets/img/play.png);
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@
 .player__description-bar::-webkit-slider-runnable-track {
   height: 5px;
   border: none;
-  background: #087140;
+  background: #008966;
 }
 
 /*сам курсор который ездит по полю*/
@@ -74,7 +74,7 @@
 .player-progress-bar:focus::-webkit-slider-runnable-track,
 .player__description-bar:hover::-webkit-slider-runnable-track,
 .player__description-bar:focus::-webkit-slider-runnable-track {
-  background-color: #26863f;
+  background-color: #01b387;
 }
 
 .player-progress-bar:hover::-webkit-slider-thumb,
@@ -87,7 +87,7 @@
 
 .player-time {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   position: relative;
   display: flex;
   justify-content: space-between;

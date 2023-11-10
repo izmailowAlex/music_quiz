@@ -1,6 +1,55 @@
 .description {
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #666;
+  border: 1px solid #555;
   background: rgb(63, 62, 62);
+}
+
+.description-preview {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.description-image {
+  width: 180px;
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.description-image__img {
+  width: 100%;
+  height: 100%;
+}
+
+.description-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description__title,
+.description-attachment,
+.description-music {
+  padding: 10px 0;
+  border-bottom: 1px solid #666;
+}
+
+.description__title {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.description-music {
+  font-style: italic;
+}
+
+.description-text {
+  min-height: 100px;
+}
+
+.description .player-wrapper {
+  width: 80%;
 }
