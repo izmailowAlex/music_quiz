@@ -1,4 +1,4 @@
-import { render } from './../../UI/render';
+import { render } from '../../UI/render';
 
 class Footer {
   private footer;

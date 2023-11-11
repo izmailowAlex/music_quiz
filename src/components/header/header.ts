@@ -1,7 +1,7 @@
-import { render } from './../../UI/render';
-import { headerListItems } from './../../data/data';
-import { state } from './../../state/state';
-import { renderLiList } from './../../store/store';
+import { render } from '../../UI/render';
+import { headerListItems } from '../../data/data';
+import { state } from '../../state/state';
+import { renderLiList } from '../../store/store';
 
 class Header {
   private header;

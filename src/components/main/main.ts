@@ -1,10 +1,10 @@
-import { render } from './../../UI/render';
-import { Moovie } from './../Moovie/Moovie';
-import { Preview } from './../Preview/Preview';
-import { Options } from './../Options/Options';
-import { Description } from './../Description/Description';
-import { data } from './../../data/data';
-import { state } from './../../state/state';
+import { render } from '../../UI/render';
+import { Moovie } from '../Moovie/Moovie';
+import { Preview } from '../Preview/Preview';
+import { Options } from '../Options/Options';
+import { Description } from '../Description/Description';
+import { data } from '../../data/data';
+import { state } from '../../state/state';
 import Header from '../Header/Header';
 
 class Main {
@@ -38,7 +38,6 @@ class Main {
 
   private create() {
     this.accumState();
-    console.log(state.level);
     const preview = new Preview().init();
     const options = new Options(state.level, this.score).init();
     const description = new Description(state.selectedComposer).init();
