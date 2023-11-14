@@ -53,3 +53,9 @@
     background-color: #666;
   }
 }
+
+@media (hover: none) {
+  .options-list-item:active {
+    background-color: #666;
+  }
+}
