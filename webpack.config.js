@@ -27,6 +27,12 @@ module.exports = {
       filename: 'game.html',
       favicon: 'src/assets/img/favicon.ico',
     }),
+    new HTMLWebpackPlugin({
+      title: 'Music Quiz',
+      template: path.resolve(__dirname, './src/result.html'),
+      filename: 'result.html',
+      favicon: 'src/assets/img/favicon.ico',
+    }),
     new CleanWebpackPlugin(),
   ],
   devServer: {

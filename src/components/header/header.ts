@@ -25,7 +25,9 @@ class Header {
     const homeContain = `
       <div class="header-wrapper">
         <div class="header-up">
-          <div class="header-logo"></div>
+          <div class="header-logo">
+            <a class="header-logo__link" href="./index.html"></a>
+          </div>
           <nav class="header-nav">
             <div class="header-nav__title">
               <a class="header-nav__link" href="./game.html">
@@ -39,9 +41,31 @@ class Header {
     const gameContain = `
       <div class="header-wrapper">
         <div class="header-up">
-          <div class="header-logo"></div>
+          <div class="header-logo">
+            <a class="header-logo__link" href="./index.html"></a>
+          </div>
           <div class="header-score">
             Score: <span id="score">${state.score}</span>
+          </div>
+        </div>
+        <div class="header-nav">
+          <ul class="header-nav__list">${renderLiList(
+            headerListItems,
+            state.level
+          )}</ul>
+        </div>
+      </div>
+    `;
+    const resultContain = `
+      <div class="header-wrapper">
+        <div class="header-up">
+          <div class="header-logo">
+            <a class="header-logo__link" href="./index.html"></a>
+          </div>
+          <div class="header-score">
+            Score: <span id="score">${
+              this.getLocal() !== null ? this.getLocal().score : '0'
+            }</span>
           </div>
         </div>
         <div class="header-nav">
@@ -55,8 +79,10 @@ class Header {
 
     if (this.page === 'home') {
       container.innerHTML = homeContain;
-    } else {
+    } else if (this.page === 'game') {
       container.innerHTML = gameContain;
+    } else {
+      container.innerHTML = resultContain;
     }
 
     return container;
@@ -66,6 +92,11 @@ class Header {
     const header = document.querySelector('.header') as HTMLElement;
     header.innerHTML = '';
     header.append(this.create());
+  }
+
+  private getLocal() {
+    const scoreItem = JSON.parse(localStorage.getItem('winner')!);
+    return scoreItem;
   }
 
   init() {
