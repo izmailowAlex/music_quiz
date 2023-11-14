@@ -24,10 +24,6 @@
   position: relative;
 }
 
-.options-list-item:hover {
-  background-color: #666;
-}
-
 .options-list__indicator {
   margin-left: 20px;
   width: 10px;
@@ -50,4 +46,10 @@
 
 .options-list-item:nth-last-child(n + 2) {
   border-bottom: 1px solid #666;
+}
+
+@media (hover: hover) {
+  .options-list-item:hover {
+    background-color: #666;
+  }
 }
