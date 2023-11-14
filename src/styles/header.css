@@ -9,7 +9,8 @@
   align-items: center;
 }
 
-.app[data-id='game'] .header-wrapper {
+.app[data-id='game'] .header-wrapper,
+.app[data-id='result'] .header-wrapper {
   flex-direction: column;
   gap: 20px;
 }
@@ -30,14 +31,17 @@
   align-items: center;
 }
 
-.header-logo {
+.header-logo__link {
   width: 64px;
   height: 64px;
   display: flex;
   background-image: url(../assets/img/logo_music.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.app[data-id='game'] .header-nav {
+.app[data-id='game'] .header-nav,
+.app[data-id='result'] .header-nav {
   width: 100%;
 }
 

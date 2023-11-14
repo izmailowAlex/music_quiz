@@ -1,0 +1,222 @@
+@media (max-width: 1200px) {
+  .app {
+    padding: 20px 20px;
+  }
+
+  .header-list__item {
+    padding: 15px 0;
+    font-size: 16px;
+  }
+
+  .preview-wrapper {
+    width: 80%;
+    padding: 0 20px;
+  }
+
+  .description-image {
+    height: 225px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app {
+    padding: 0;
+  }
+
+  .container {
+    max-width: 95%;
+  }
+
+  .header-list__item {
+    font-size: 16px;
+  }
+
+  .description-image {
+    width: 140px;
+    height: 190px;
+  }
+
+  .description__title {
+    font-size: 15px;
+  }
+
+  .description__title,
+  .description-attachment,
+  .description-music {
+    padding: 5px 0;
+  }
+
+  .description-attachment,
+  .description-music {
+    font-size: 12px;
+  }
+
+  .description-wrapper {
+    padding: 0 20px;
+    flex: 1 1;
+  }
+
+  .description .player-wrapper {
+    width: 70%;
+  }
+
+  .description .player-time {
+    margin-top: 5px;
+  }
+
+  .description .player-time-current,
+  .description .player-time-full {
+    font-size: 14px;
+  }
+
+  .description-text {
+    font-size: 14px;
+  }
+
+  .game-button {
+    padding: 0.7rem;
+  }
+
+  .result__title {
+    font-size: 46px;
+  }
+
+  .result-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 5px 0;
+  }
+
+  .app[data-id='game'] .header-wrapper,
+  .app[data-id='result'] .header-wrapper {
+    gap: 10px;
+  }
+
+  .header-logo__link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-list__item {
+    font-size: 14px;
+  }
+
+  .options,
+  .description {
+    grid-column: 1/3;
+  }
+
+  .description__title {
+    font-size: 18px;
+  }
+
+  .description-attachment,
+  .description-music {
+    font-size: 14px;
+  }
+
+  .description-text {
+    min-height: 40px;
+    line-height: 20px;
+  }
+
+  .footer {
+    padding: 10px;
+  }
+
+  .github {
+    width: 25px;
+    height: 25px;
+  }
+
+  .contributors__link-label,
+  .footer-year {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-score {
+    font-size: 14px;
+  }
+
+  .header-list__item {
+    font-size: 11px;
+  }
+
+  .preview {
+    padding: 10px;
+  }
+
+  .preview-image {
+    width: 105px;
+    height: 130px;
+  }
+
+  .preview-wrapper {
+    padding: 0;
+    width: 70%;
+  }
+
+  .preview__title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 8px;
+  }
+
+  .player-wrapper {
+    margin: 0;
+    width: 70%;
+  }
+
+  .preview .player-time-current,
+  .preview .player-time-full {
+    font-size: 12px;
+  }
+
+  .options-list {
+    min-height: auto;
+  }
+
+  .options-list__text {
+    font-size: 14px;
+  }
+
+  .description-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .description-wrapper {
+    padding: 0;
+    width: 100%;
+  }
+
+  .description .player {
+    margin-top: 10px;
+    gap: 25px;
+  }
+
+  .game-button {
+    font-size: 14px;
+  }
+
+  .github {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contributors__link {
+    gap: 5px;
+  }
+
+  .contributors__link-label,
+  .footer-year {
+    font-size: 12px;
+  }
+}

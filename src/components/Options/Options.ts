@@ -4,7 +4,7 @@ import { data } from './../../data/data';
 import { state } from './../../state/state';
 import { Description } from './../Description/Description';
 import { stopAudio } from './../../store/store';
-import audioCorrect from './../../assets/audio/lampe.mp3';
+import audioCorrect from './../../assets/audio/winner.mp3';
 import audioUnCorrect from './../../assets/audio/mistake.mp3';
 
 export class Options {
@@ -86,10 +86,6 @@ export class Options {
           this.showAnswer();
           return;
         }
-
-        // if (!state.selectedLiElems.includes(item)) {
-        //   state.selectedLiElems.push(item);
-        // } else return;
       });
     });
 
@@ -167,7 +163,7 @@ export class Options {
       '.preview__title'
     ) as HTMLImageElement;
     const buttonNextLevel = document.querySelector(
-      '.game-button-next'
+      '.game-button'
     ) as HTMLButtonElement;
     const result = state.score + this.score;
     state.score = result;
@@ -178,8 +174,6 @@ export class Options {
     stopAudio(mainPlayer, mainPlayerAudio);
     stopAudio(descriptionPlayer, descriptionPlayerAudio);
   }
-
-  prepairState() {}
 
   init() {
     return this.options;
