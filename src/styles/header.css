@@ -36,6 +36,8 @@
   height: 64px;
   display: flex;
   background-image: url(../assets/img/logo_music.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .app[data-id='game'] .header-nav,

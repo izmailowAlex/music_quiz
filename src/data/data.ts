@@ -79,7 +79,7 @@ import pastoriusMp3 from './../assets/audio/jaco-pastorius-kaver-kal-ciy--chiken
 
 export const headerListItems = [
   'Classic',
-  'Russian classic',
+  'Russian',
   'Romantic',
   'Pop',
   'Rock',
@@ -219,7 +219,7 @@ export const data: IData[][] = [
       name: 'Nikolai Rimsky-Korsakov',
       mp3: rimskiyKorsakovMp3,
       attachment: 'russian composer',
-      composition: "'March of Chernomor' from the opera 'Ruslan and Lyudmila'",
+      composition: "'March of Chernomor' from the opera 'Ruslan & Lyudmila'",
       src: rimskiyKorsakovImage,
       alt: 'Composer',
       description:
