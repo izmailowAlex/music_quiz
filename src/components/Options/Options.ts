@@ -6,7 +6,6 @@ import { Description } from './../Description/Description';
 import { stopAudio } from './../../store/store';
 import audioCorrect from './../../assets/audio/winner.mp3';
 import audioUnCorrect from './../../assets/audio/mistake.mp3';
-import { sign } from 'crypto';
 
 export class Options {
   private options;
@@ -39,7 +38,6 @@ export class Options {
 
     listItems.forEach((item) => {
       item.addEventListener('click', () => {
-        console.log(item)
         this.setStateSelectedDataObject(item);
 
         new Description(state.selectedComposer).update();
