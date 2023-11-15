@@ -6,6 +6,7 @@ import { Description } from './../Description/Description';
 import { stopAudio } from './../../store/store';
 import audioCorrect from './../../assets/audio/winner.mp3';
 import audioUnCorrect from './../../assets/audio/mistake.mp3';
+import { sign } from 'crypto';
 
 export class Options {
   private options;
@@ -57,6 +58,7 @@ export class Options {
       const listItem = render({
         tag: 'li',
         className: 'options-list-item',
+        attributes: [{ attr: 'onclick', sign: '' }],
         child: [indicator, text],
       });
       this.listItemsArray.push(listItem);
