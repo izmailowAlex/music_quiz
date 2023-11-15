@@ -11,7 +11,7 @@ export default class App {
       page = root.dataset.id;
     }
     const header = new Header(page!).init();
-    const footer = new Footer().init();
+    // const footer = new Footer().init();
     const main = new Main(page!).init();
 
     if (root) {
@@ -20,7 +20,7 @@ export default class App {
         const mainBlock = main;
         root.append(mainBlock);
       }
-      root.append(footer);
+      // root.append(footer);
     }
   }
 
