@@ -39,6 +39,7 @@ export class Options {
 
     listItems.forEach((item) => {
       item.addEventListener('click', () => {
+        console.log(item)
         this.setStateSelectedDataObject(item);
 
         new Description(state.selectedComposer).update();
