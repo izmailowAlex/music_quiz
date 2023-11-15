@@ -34,23 +34,8 @@ export class Options {
     }) as HTMLAudioElement;
 
     this.options = this.create();
-  }
-
-  create() {
-    const options = render({
-      tag: 'div',
-      className: 'options',
-    });
-
-    const optionsList = render({
-      tag: 'ul',
-      className: 'options-list',
-      child: this.containOptionsList(),
-    });
-
-    options.append(optionsList, this.audioCorrect, this.audioUnCorrect)
     
-    const listItems = Array.from(options.querySelectorAll('.options-list-item')) as HTMLElement[]
+    const listItems = Array.from(this.options.querySelectorAll('.options-list-item')) as HTMLElement[]
 
     listItems.forEach((item) => {
       item.addEventListener('click', () => {
@@ -72,6 +57,21 @@ export class Options {
         }
       });
     });
+  }
+
+  create() {
+    const options = render({
+      tag: 'div',
+      className: 'options',
+    });
+
+    const optionsList = render({
+      tag: 'ul',
+      className: 'options-list',
+      child: this.containOptionsList(),
+    });
+
+    options.append(optionsList, this.audioCorrect, this.audioUnCorrect)
 
     return options;
   }
