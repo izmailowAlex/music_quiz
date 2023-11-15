@@ -14,13 +14,11 @@ export class Options {
   private audioUnCorrect;
   public dataGameArray;
   public score;
-  public listItemsArray: HTMLElement[];
   private isCorrect;
 
   constructor(level: number, score: number) {
     this.dataGameArray = level;
     this.score = score;
-    this.listItemsArray = [];
     this.isCorrect = false;
 
     this.audioCorrect = render({
@@ -35,42 +33,26 @@ export class Options {
       id: 'uncorrect',
     }) as HTMLAudioElement;
 
-    this.options = render({
-      tag: 'div',
-      className: 'options',
-      child: [this.create(), this.audioCorrect, this.audioUnCorrect],
-    });
+    this.options = this.create();
   }
 
   create() {
-    data[this.dataGameArray].forEach((item) => {
-      const indicator = render({
-        tag: 'span',
-        className: 'options-list__indicator',
-      });
-
-      const text = render({
-        tag: 'span',
-        className: 'options-list__text',
-        innerHTML: item.name,
-      });
-
-      const listItem = render({
-        tag: 'li',
-        className: 'options-list-item',
-        attributes: [{ attr: 'onclick', sign: '' }],
-        child: [indicator, text],
-      });
-      this.listItemsArray.push(listItem);
+    const options = render({
+      tag: 'div',
+      className: 'options',
     });
 
     const optionsList = render({
       tag: 'ul',
       className: 'options-list',
-      child: this.listItemsArray,
+      child: this.containOptionsList(),
     });
 
-    this.listItemsArray.forEach((item) => {
+    options.append(optionsList, this.audioCorrect, this.audioUnCorrect)
+    
+    const listItems = Array.from(options.querySelectorAll('.options-list-item')) as HTMLElement[]
+
+    listItems.forEach((item) => {
       item.addEventListener('click', () => {
         this.setStateSelectedDataObject(item);
 
@@ -91,7 +73,33 @@ export class Options {
       });
     });
 
-    return optionsList;
+    return options;
+  }
+
+  private containOptionsList() {
+    const listItemsArray: HTMLElement[] = []
+
+    data[this.dataGameArray].forEach((item) => {
+      const indicator = render({
+        tag: 'span',
+        className: 'options-list__indicator',
+      });
+
+      const text = render({
+        tag: 'span',
+        className: 'options-list__text',
+        innerHTML: item.name,
+      });
+
+      const listItem = render({
+        tag: 'li',
+        className: 'options-list-item',
+        child: [indicator, text],
+      });
+      listItemsArray.push(listItem);
+    });
+
+    return listItemsArray;
   }
 
   private searchSelectedObjectFromData(liItem: HTMLElement) {
