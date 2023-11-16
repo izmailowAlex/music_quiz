@@ -33,11 +33,66 @@ export class Options {
     }) as HTMLAudioElement;
 
     this.options = this.create();
-    
-    const listItems = Array.from(this.options.querySelectorAll('.options-list-item')) as HTMLElement[]
+
+    this.listenerListItems();
+  }
+
+  create() {
+    const options = render({
+      tag: 'div',
+      className: 'options',
+    });
+
+    const optionsList = render({
+      tag: 'ul',
+      className: 'options-list',
+      child: this.containOptionsList(),
+    });
+
+    options.append(optionsList, this.audioCorrect, this.audioUnCorrect);
+
+    return options;
+  }
+
+  private containOptionsList() {
+    const listItemsArray: HTMLElement[] = [];
+
+    data[this.dataGameArray].forEach((item) => {
+      const indicator = render({
+        tag: 'span',
+        className: 'options-list__indicator',
+      });
+
+      const text = render({
+        tag: 'span',
+        className: 'options-list__text',
+        innerHTML: item.name,
+      });
+
+      const listItem = render({
+        tag: 'li',
+        className: 'options-list-item',
+        attributes: [{ attr: 'onclick', sign: 'void(0);' }],
+        child: [indicator, text],
+      });
+      listItemsArray.push(listItem);
+    });
+
+    return listItemsArray;
+  }
+
+  private listenerListItems() {
+    const listItems = Array.from(
+      this.options.querySelectorAll('.options-list-item')
+    ) as HTMLElement[];
+
+    const iOS = navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    let event = 'click';
+
+    if (iOS !== null) event = 'touchstart';
 
     listItems.forEach((item) => {
-      item.addEventListener('click', () => {
+      item.addEventListener(event, () => {
         this.setStateSelectedDataObject(item);
 
         new Description(state.selectedComposer).update();
@@ -58,47 +113,12 @@ export class Options {
     });
   }
 
-  create() {
-    const options = render({
-      tag: 'div',
-      className: 'options',
-    });
-
-    const optionsList = render({
-      tag: 'ul',
-      className: 'options-list',
-      child: this.containOptionsList(),
-    });
-
-    options.append(optionsList, this.audioCorrect, this.audioUnCorrect)
-
-    return options;
-  }
-
-  private containOptionsList() {
-    const listItemsArray: HTMLElement[] = []
-
-    data[this.dataGameArray].forEach((item) => {
-      const indicator = render({
-        tag: 'span',
-        className: 'options-list__indicator',
-      });
-
-      const text = render({
-        tag: 'span',
-        className: 'options-list__text',
-        innerHTML: item.name,
-      });
-
-      const listItem = render({
-        tag: 'li',
-        className: 'options-list-item',
-        child: [indicator, text],
-      });
-      listItemsArray.push(listItem);
-    });
-
-    return listItemsArray;
+  private setStateSelectedDataObject(item: HTMLElement) {
+    return state.selectedDataObj.splice(
+      0,
+      1,
+      this.searchSelectedObjectFromData(item)
+    );
   }
 
   private searchSelectedObjectFromData(liItem: HTMLElement) {
@@ -111,14 +131,6 @@ export class Options {
     return selectedObject;
   }
 
-  private setStateSelectedDataObject(item: HTMLElement) {
-    return state.selectedDataObj.splice(
-      0,
-      1,
-      this.searchSelectedObjectFromData(item)
-    );
-  }
-
   private setStateSelectedComposer(item: HTMLElement) {
     return (state.selectedComposer = item.innerText);
   }
@@ -126,10 +138,14 @@ export class Options {
   private voiceOver(item: HTMLElement) {
     if (!item.firstElementChild!.classList.contains('uncorrect')) {
       if (item.innerText === state.currentObj.name) {
-        this.audioCorrect.play();
+        this.audioCorrect.play().catch(function (error) {
+          console.log(error);
+        });
       } else {
         this.setScore();
-        this.audioUnCorrect.play();
+        this.audioUnCorrect.play().catch(function (error) {
+          console.log(error);
+        });
       }
     }
   }
