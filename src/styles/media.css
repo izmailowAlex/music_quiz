@@ -14,6 +14,7 @@
   }
 
   .description-image {
+    width: 160px;
     height: 225px;
   }
 }
@@ -31,8 +32,13 @@
     font-size: 16px;
   }
 
+  .preview-image {
+    width: 114px;
+    height: 160px;
+  }
+
   .description-image {
-    width: 140px;
+    width: 136px;
     height: 190px;
   }
 
@@ -88,7 +94,7 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 5px 0;
+    padding: 7px 0;
   }
 
   .app[data-id='game'] .header-wrapper,
@@ -103,6 +109,11 @@
 
   .header-list__item {
     font-size: 14px;
+  }
+
+  .preview-image {
+    width: 100px;
+    height: 140px;
   }
 
   .options,
@@ -150,16 +161,17 @@
 
   .preview {
     padding: 10px;
+    justify-content: space-between;
   }
 
   .preview-image {
-    width: 105px;
+    width: 93px;
     height: 130px;
   }
 
   .preview-wrapper {
     padding: 0;
-    width: 70%;
+    width: 75%;
   }
 
   .preview__title {
@@ -168,9 +180,13 @@
     padding-bottom: 8px;
   }
 
+  .player {
+    justify-content: space-between;
+  }
+
   .player-wrapper {
     margin: 0;
-    width: 70%;
+    width: 80%;
   }
 
   .preview .player-time-current,
@@ -198,8 +214,12 @@
   }
 
   .description .player {
-    margin-top: 10px;
+    margin-top: 20px;
     gap: 25px;
+  }
+
+  .description .player-wrapper {
+    width: 80%;
   }
 
   .game-button {
