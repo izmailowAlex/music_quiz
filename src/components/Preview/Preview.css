@@ -9,7 +9,9 @@
 
 .preview-image {
   width: 144px;
-  height: 150px;
+  height: 202px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .preview-image__img {
