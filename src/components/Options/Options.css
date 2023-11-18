@@ -47,8 +47,14 @@
 .options-list-item:nth-last-child(n + 2) {
   border-bottom: 1px solid #666;
 }
+.options-list-item:hover {
+  background-color: #666;
+}
+.options-list-item:active {
+  background-color: #555;
+}
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   .options-list-item:hover {
     background-color: #666;
   }
@@ -58,4 +64,4 @@
   .options-list-item:active {
     background-color: #666;
   }
-}
+} */
