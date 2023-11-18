@@ -13,7 +13,6 @@ class Main {
   private page;
   public level;
   public hiddenComposer;
-  public selectedComposer;
   private score;
   public maxScore;
 
@@ -22,9 +21,8 @@ class Main {
     this.page = page;
     this.level = state.level;
     this.hiddenComposer = this.setHiddenComposer();
-    this.selectedComposer = state.selectedComposer;
-    this.score = 6;
-    this.maxScore = 6 * data.length;
+    this.score = 5;
+    this.maxScore = this.score * data.length;
 
     this.main = render({
       tag: 'main',
@@ -44,7 +42,7 @@ class Main {
     this.accumState();
     const preview = new Preview().init();
     const options = new Options(state.level, this.score).init();
-    const description = new Description(state.selectedComposer).init();
+    const description = new Description().init();
     const buttonNext = render({
       tag: 'button',
       className: 'game-button',
@@ -134,7 +132,6 @@ class Main {
     this.level = state.level + 1;
     state.level = this.level;
     state.selectedDataObj = [];
-    state.selectedComposer = '';
     this.hiddenComposer = this.setHiddenComposer();
     new Header(this.page).update();
     main.innerHTML = '';

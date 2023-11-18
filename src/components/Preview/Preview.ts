@@ -1,5 +1,5 @@
 import { render } from './../../UI/render';
-import png from './../../assets/img/empty.png';
+import png from './../../assets/img/empty.jpg';
 import { Player } from './../Player/Player';
 
 export class Preview {

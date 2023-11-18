@@ -32,7 +32,5 @@ export type IState = {
   level: number;
   score: number;
   currentObj: IData;
-  selectedLiElems: HTMLElement[];
   selectedDataObj: IData[];
-  selectedComposer: string;
 };

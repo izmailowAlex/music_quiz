@@ -1,5 +1,5 @@
 .options {
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid #666;
   background: rgb(63, 62, 62);
   overflow: hidden;
@@ -14,18 +14,14 @@
 }
 
 .options-list-item {
+  position: relative;
   padding: 0.85rem 3rem;
   height: 100%;
   line-height: 1.5;
   display: flex;
   align-items: center;
-  cursor: pointer;
   transition: all 0.3s;
-  position: relative;
-}
-
-.options-list-item:hover {
-  background-color: #666;
+  cursor: pointer;
 }
 
 .options-list__indicator {
@@ -50,4 +46,16 @@
 
 .options-list-item:nth-last-child(n + 2) {
   border-bottom: 1px solid #666;
+}
+
+@media (hover: hover) {
+  .options-list-item:hover {
+    background-color: #666;
+  }
+}
+
+@media (hover: none) {
+  .options-list-item:active {
+    background-color: #555;
+  }
 }
