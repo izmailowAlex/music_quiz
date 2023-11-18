@@ -78,17 +78,17 @@ export class Player {
 
   updateCurrentTime() {
     return setInterval(() => {
-      this.playerTimeCurrent!.innerHTML = this.timePrepair(
-        this.playerAudio.currentTime
-      );
+      const currentTime = this.playerAudio.currentTime;
+      this.playerTimeCurrent!.innerHTML = this.timePrepair(currentTime);
     }, 100);
   }
 
   updateFullTime() {
     return setTimeout(() => {
-      this.playerTimeFull!.innerHTML = this.timePrepair(
-        this.playerAudio.duration
-      );
+      const duration = this.playerAudio.duration;
+      if (Number.isFinite(duration)) {
+        this.playerTimeFull!.innerHTML = this.timePrepair(duration);
+      } else this.updateFullTime();
     }, 100);
   }
 

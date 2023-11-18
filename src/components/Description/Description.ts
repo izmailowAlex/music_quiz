@@ -4,14 +4,12 @@ import { state } from './../../state/state';
 import { stopAudio } from './../../store/store';
 
 export class Description {
-  private selectedComposer;
   private description;
   private descriptionElem;
   private selectedDataObj;
   private player;
 
-  constructor(selectedComposer: string) {
-    this.selectedComposer = selectedComposer;
+  constructor() {
     this.selectedDataObj = state.selectedDataObj[0];
     this.player = new Player('description').init() as HTMLDivElement;
     this.descriptionElem = document.querySelector(
@@ -24,13 +22,8 @@ export class Description {
     const description = render({
       tag: 'div',
       className: 'description',
+      innerHTML: 'Listen to the player<br/>Select answer from the list',
     });
-    if (this.selectedComposer !== '') {
-      description.innerHTML = this.selectedComposer;
-    } else {
-      description.innerHTML =
-        'Listen to the player<br/>Select answer from the list';
-    }
 
     return description;
   }

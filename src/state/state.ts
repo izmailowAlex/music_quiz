@@ -14,7 +14,5 @@ export const state: IState = {
     alt: '',
     description: '',
   },
-  selectedLiElems: [],
   selectedDataObj: [],
-  selectedComposer: '',
 };
